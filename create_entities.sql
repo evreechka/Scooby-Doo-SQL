@@ -262,11 +262,11 @@ CREATE TABLE IF NOT EXISTS EQUIPMENT_CASE
 CREATE TABLE IF NOT EXISTS CONTENTION
 (
     contention_id     BIGSERIAL PRIMARY KEY,
-    date              TIMESTAMP NOT NULL,
+    date_contention    TIMESTAMP NOT NULL,
     description       TEXT,
     damage_critically INT CHECK ( damage_critically >= 0 AND damage_critically <= 10 ),
     crime_id          BIGINT UNIQUE,
-    victim_id         BIGINT UNIQUE ,
+    victim_id         BIGINT UNIQUE,
     FOREIGN KEY (crime_id) REFERENCES CRIME (crime_id),
     FOREIGN KEY (victim_id) REFERENCES CHARACTER (character_id)
 );

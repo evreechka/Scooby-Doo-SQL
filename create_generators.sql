@@ -461,7 +461,7 @@ begin
                 exit;
             end if;
         end loop;
-    INSERT INTO CONTENTION (date, description, damage_critically, crime_id, victim_id)
+    INSERT INTO CONTENTION (date_contention, description, damage_critically, crime_id, victim_id)
     VALUES (date_cont, descr, damage, cr_id, vict_id);
 end;
 $$ LANGUAGE plpgsql;
